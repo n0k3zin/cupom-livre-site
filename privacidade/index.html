@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Politica de Privacidade - Cupom Livre</title>
+    <meta name="description" content="Politica de Privacidade da extensao Cupom Livre.">
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #1869e7;
+        --blue-dark: #0f58c8;
+        --green: #177245;
+        --red: #a12b2b;
+        --amber: #8a5b00;
+        --ink: #111827;
+        --text: #172033;
+        --muted: #5d6a7f;
+        --line: #e4eaf2;
+        --soft: #f6f8fb;
+        --panel: #ffffff;
+        --blue-soft: #edf4ff;
+        --green-soft: #e9f8ef;
+        --shadow: 0 18px 42px rgba(20, 31, 54, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, #eef4ff 0, #f6f8fb 310px),
+          var(--soft);
+        color: var(--text);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 26px 0 64px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 34px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 14px;
+        background: var(--blue);
+        box-shadow: 0 10px 24px rgba(24, 105, 231, 0.24);
+      }
+
+      .brand-mark svg {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand strong {
+        display: block;
+        font-size: 18px;
+        line-height: 1.1;
+      }
+
+      .brand span span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .topbar nav {
+        display: flex;
+        gap: 10px;
+      }
+
+      .nav-link {
+        display: inline-flex;
+        min-height: 40px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border-radius: 12px;
+        color: #536379;
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .nav-link--primary {
+        background: var(--blue);
+        color: #ffffff;
+        box-shadow: 0 10px 22px rgba(24, 105, 231, 0.2);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 26px;
+        align-items: stretch;
+        margin-bottom: 26px;
+      }
+
+      .hero-main,
+      .summary-card,
+      .article-card,
+      .toc {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-main {
+        padding: 34px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 800px;
+        color: var(--ink);
+        font-size: clamp(34px, 5.5vw, 58px);
+        line-height: 1.03;
+        letter-spacing: 0;
+      }
+
+      .updated {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 30px;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: var(--green-soft);
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.68;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .hero-stat {
+        min-height: 118px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #f8fbff;
+      }
+
+      .hero-stat strong {
+        display: block;
+        color: var(--ink);
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .hero-stat span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .summary-card {
+        padding: 22px;
+      }
+
+      .summary-card h2 {
+        color: var(--ink);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .summary-item {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        border-radius: 14px;
+        background: #f8fbff;
+      }
+
+      .summary-icon {
+        display: inline-flex;
+        width: 34px;
+        height: 34px;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        align-self: center;
+        border-radius: 11px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        flex: 0 0 auto;
+        line-height: 0;
+        margin: 0;
+      }
+
+      .summary-icon svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .summary-item strong {
+        display: block;
+        color: var(--text);
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .summary-item div > span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .content-layout {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .toc {
+        position: sticky;
+        top: 18px;
+        padding: 18px;
+        box-shadow: none;
+      }
+
+      .toc strong {
+        display: block;
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      .toc nav {
+        display: grid;
+        gap: 4px;
+        margin-top: 12px;
+      }
+
+      .toc a {
+        display: block;
+        padding: 9px 10px;
+        border-radius: 10px;
+        color: #536379;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        background: var(--blue-soft);
+        color: #155ac9;
+      }
+
+      .article-card {
+        padding: 34px;
+      }
+
+      .section {
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section:first-child {
+        padding-top: 0;
+      }
+
+      .section:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .section h2 {
+        color: var(--ink);
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      .section p {
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      ul {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 24px;
+        color: var(--muted);
+      }
+
+      li::before {
+        position: absolute;
+        top: 0.68em;
+        left: 4px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--blue);
+        content: "";
+      }
+
+      .notice {
+        margin-top: 18px;
+        padding: 16px;
+        border: 1px solid #cdebd9;
+        border-radius: 16px;
+        background: #f1fbf5;
+        color: #286146;
+      }
+
+      .warning {
+        border-color: #f2ddb5;
+        background: #fff8e8;
+        color: var(--amber);
+      }
+
+      footer {
+        margin-top: 34px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 960px) {
+        .hero,
+        .content-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .toc {
+          position: static;
+        }
+
+        .toc nav {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .site {
+          width: min(100% - 24px, 1160px);
+          padding-top: 18px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+
+        .topbar nav {
+          width: 100%;
+        }
+
+        .nav-link {
+          flex: 1 1 0;
+        }
+
+        .hero-main,
+        .summary-card,
+        .article-card,
+        .toc {
+          border-radius: 16px;
+          padding: 22px;
+        }
+
+        .hero-grid,
+        .toc nav {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="site">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Cupom Livre">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20.5C10 17.46 12.46 15 15.5 15H32.5C35.54 15 38 17.46 38 20.5V27.5C38 30.54 35.54 33 32.5 33H15.5C12.46 33 10 30.54 10 27.5V20.5Z" fill="white"/>
+              <circle cx="10" cy="24" r="3" fill="#1869E7"/>
+              <circle cx="38" cy="24" r="3" fill="#1869E7"/>
+              <path d="M20 29L28.5 19" stroke="#1869E7" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="19" cy="20" r="2" fill="#1869E7"/>
+              <circle cx="29" cy="28" r="2" fill="#1869E7"/>
+            </svg>
+          </span>
+          <span>
+            <strong>Cupom Livre</strong>
+            <span>Politica publica da extensao</span>
+          </span>
+        </a>
+        <nav aria-label="Navegacao principal">
+          <a class="nav-link" href="/">Inicio</a>
+          <a class="nav-link nav-link--primary" href="#contato">Contato</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-labelledby="privacy-title">
+        <div class="hero-main">
+          <p class="updated"><span class="dot"></span>Ultima atualizacao: 3 de junho de 2026</p>
+          <h1 id="privacy-title">Politica de Privacidade do Cupom Livre.</h1>
+          <p class="lead">
+            O Cupom Livre e uma extensao Chrome que ajuda usuarios a coletar
+            cupons disponiveis no Mercado Livre Brasil e, opcionalmente, abrir
+            ofertas usando link de afiliado com aviso claro e controles locais.
+          </p>
+          <div class="hero-grid" aria-label="Resumo rapido">
+            <div class="hero-stat">
+              <strong>0</strong>
+              <span>senhas, cartoes, CPF ou dados bancarios coletados</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Local</strong>
+              <span>preferencias guardadas no navegador do usuario</span>
+            </div>
+            <div class="hero-stat">
+              <strong>HTTPS</strong>
+              <span>comunicacao de producao protegida com o servico de apoio</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="summary-card" aria-label="Resumo de seguranca">
+          <h2>Compromissos principais</h2>
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 5L5 19"/>
+                  <circle cx="7.5" cy="7.5" r="2.2"/>
+                  <circle cx="16.5" cy="16.5" r="2.2"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Finalidade limitada</strong>
+                <span>Coletar cupons disponiveis e operar o fluxo de afiliado.</span>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l7 3v5c0 4.5-2.9 8.5-7 10-4.1-1.5-7-5.5-7-10V6l7-3z"/>
+                  <path d="M8.5 12l2.2 2.2 4.8-5"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Checkout protegido</strong>
+                <span>A extensao bloqueia compra, pagamento, carrinho e finalizacao.</span>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 10v6"/>
+                  <path d="M12 7h.01"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Afiliado transparente</strong>
+                <span>Podemos receber comissao sem alterar o preco final.</span>
+              </div>
+            </div>
+            <div class="summary-item">
+              <span class="summary-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M7.5 7.5l9 9"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Sem venda de dados</strong>
+                <span>Dados nao sao vendidos nem usados para publicidade personalizada.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="content-layout">
+        <aside class="toc" aria-label="Indice da politica">
+          <strong>Nesta politica</strong>
+          <nav>
+            <a href="#dados-tratados">Dados tratados</a>
+            <a href="#dados-nao-coletados">Dados nao coletados</a>
+            <a href="#checkout">Checkout</a>
+            <a href="#afiliado">Afiliado</a>
+            <a href="#uso">Uso dos dados</a>
+            <a href="#compartilhamento">Compartilhamento</a>
+            <a href="#seguranca">Seguranca</a>
+            <a href="#retencao">Retencao</a>
+            <a href="#contato">Contato</a>
+          </nav>
+        </aside>
+
+        <article class="article-card">
+          <section class="section" id="dados-tratados">
+            <h2>Dados que a extensao pode tratar</h2>
+            <ul>
+              <li>URL de produto ou pagina de cupons do Mercado Livre, usada para detectar a pagina atual, coletar cupons e solicitar geracao de link afiliado.</li>
+              <li>Textos e elementos visiveis nas paginas permitidas do Mercado Livre, usados somente para identificar cupons, botoes seguros de coleta e produtos exibidos.</li>
+              <li>ID e versao da extensao, enviados ao servico proprio para controle operacional, compatibilidade e seguranca.</li>
+              <li>Identificador tecnico de instalacao, gerado pelo servico proprio para limitar uso e permitir revogacao por instalacao.</li>
+              <li>Preferencias locais da extensao, como afiliado ativado/desativado, redirecionamento automatico ativado/desativado, velocidade da coleta e estado/resumo da ultima coleta.</li>
+              <li>Dados tecnicos de seguranca do servico, como origem da requisicao, status da resposta e URL de produto reduzida, usados para limite de uso, diagnostico e prevencao de abuso.</li>
+            </ul>
+          </section>
+
+          <section class="section" id="dados-nao-coletados">
+            <h2>Dados que a extensao nao coleta</h2>
+            <p>
+              O Cupom Livre nao coleta senha, cartao, CPF, endereco, dados
+              bancarios, dados de checkout, dados de pagamento, cookies, dados
+              de login, comunicacoes pessoais ou conteudo de mensagens.
+            </p>
+            <div class="notice">
+              A extensao tambem nao coleta dados de saude, credito, emprestimo
+              ou informacoes para determinar elegibilidade financeira.
+            </div>
+          </section>
+
+          <section class="section" id="checkout">
+            <h2>Checkout e pagamento</h2>
+            <p>
+              A extensao nao compra produtos, nao finaliza pedidos, nao faz
+              pagamentos e nao atua em paginas de checkout, pagamento, carrinho,
+              compras, frete, cobranca ou finalizacao de pedido.
+            </p>
+            <div class="notice warning">
+              Quando uma pagina sensivel e detectada, a extensao bloqueia o
+              fluxo de afiliado e coleta.
+            </div>
+          </section>
+
+          <section class="section" id="afiliado">
+            <h2>Afiliado</h2>
+            <p>
+              A extensao pode gerar e abrir links de afiliado do Mercado Livre.
+              Podemos receber comissao por compras elegiveis. O uso do afiliado
+              nao altera o preco final para o usuario.
+            </p>
+            <p>
+              O usuario pode desativar ou reativar afiliado e redirecionamento
+              automatico nas configuracoes da extensao.
+            </p>
+          </section>
+
+          <section class="section" id="uso">
+            <h2>Como os dados sao usados</h2>
+            <ul>
+              <li>Identificar paginas compativeis do Mercado Livre.</li>
+              <li>Coletar cupons quando o usuario solicita.</li>
+              <li>Gerar link afiliado por meio do servico proprio.</li>
+              <li>Aplicar limites de uso por instalacao.</li>
+              <li>Diagnosticar erros operacionais sem registrar segredos completos.</li>
+            </ul>
+          </section>
+
+          <section class="section" id="compartilhamento">
+            <h2>Compartilhamento</h2>
+            <p>
+              Nao vendemos dados pessoais. Nao usamos dados para publicidade
+              personalizada. A URL de produto pode ser enviada ao servico proprio
+              do Cupom Livre apenas para gerar o link afiliado solicitado e operar
+              a extensao.
+            </p>
+          </section>
+
+          <section class="section" id="seguranca">
+            <h2>Seguranca</h2>
+            <p>
+              A comunicacao com o servico de apoio usa HTTPS em producao.
+              Registros tecnicos evitam guardar credenciais, cookies, cabecalhos
+              sensiveis ou identificadores completos. URLs registradas em logs
+              sao reduzidas sempre que possivel.
+            </p>
+          </section>
+
+          <section class="section" id="retencao">
+            <h2>Retencao</h2>
+            <p>
+              Preferencias locais ficam armazenadas no navegador do usuario e
+              podem ser removidas ao limpar dados da extensao ou desinstala-la.
+            </p>
+            <p>
+              Identificadores tecnicos da instalacao e dados operacionais podem
+              ser mantidos enquanto a instalacao estiver ativa. Logs operacionais
+              podem ser mantidos temporariamente para seguranca, diagnostico e
+              prevencao de abuso.
+            </p>
+          </section>
+
+          <section class="section" id="contato">
+            <h2>Contato</h2>
+            <p>
+              Para solicitar informacoes, revogacao de instalacao ou remocao de
+              dados operacionais associados a uma instalacao, entre em contato
+              pelo email informado na pagina da extensao na Chrome Web Store.
+            </p>
+          </section>
+        </article>
+      </div>
+
+      <footer>
+        Cupom Livre. Pagina publica de privacidade da extensao Chrome.
+      </footer>
+    </main>
+  </body>
+</html>
