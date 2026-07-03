@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cupom Livre | Extensão de cupons para Mercado Livre</title>
-<meta name="description" content="Instale o Cupom Livre, extensão Chrome para encontrar e coletar cupons do Mercado Livre com praticidade, privacidade e apoio por afiliado transparente.">
-<meta name="keywords" content="Cupom Livre, extensão de cupons Mercado Livre, cupons Mercado Livre Chrome, extensão Chrome Mercado Livre, cupom Mercado Livre">
+<title>Cupom Livre | Extensão de cupom do Mercado Livre para Chrome</title>
+<meta name="description" content="Baixe o Cupom Livre, extensão de cupom do Mercado Livre para Chrome. Encontre cupons disponíveis, facilite sua busca por ofertas e use a ferramenta com privacidade e transparência.">
+<meta name="application-name" content="Cupom Livre">
+<meta name="author" content="Cupom Livre">
+<meta name="keywords" content="extensão de cupom do Mercado Livre, Cupom Livre, cupom Mercado Livre, cupons Mercado Livre, extensão Mercado Livre Chrome, extensão de cupons para Chrome, extensão para cupom Mercado Livre">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="googlebot" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#1869e7">
 <link rel="canonical" href="https://cupomlivre.net/">
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/hero-extension-preview.svg" as="image">
-<meta property="og:title" content="Cupom Livre | Extensão de cupons para Mercado Livre">
-<meta property="og:description" content="Instale a extensão Cupom Livre no Chrome e encontre cupons disponíveis no Mercado Livre com mais praticidade e transparência.">
+<meta property="og:title" content="Cupom Livre | Extensão de cupom do Mercado Livre para Chrome">
+<meta property="og:description" content="Baixe o Cupom Livre, extensão de cupom do Mercado Livre para Chrome, e encontre cupons disponíveis com mais praticidade, privacidade e transparência.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cupomlivre.net/">
 <meta property="og:image" content="https://cupomlivre.net/assets/hero-extension-preview.svg">
@@ -21,8 +23,8 @@
 <meta property="og:site_name" content="Cupom Livre">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cupom Livre | Extensão de cupons para Mercado Livre">
-<meta name="twitter:description" content="Extensão Chrome para encontrar e coletar cupons disponíveis no Mercado Livre.">
+<meta name="twitter:title" content="Cupom Livre | Extensão de cupom do Mercado Livre para Chrome">
+<meta name="twitter:description" content="Extensão de cupom do Mercado Livre para Chrome, feita para encontrar cupons disponíveis com praticidade e transparência.">
 <meta name="twitter:image" content="https://cupomlivre.net/assets/hero-extension-preview.svg">
 <script type="application/ld+json">
 {
@@ -34,7 +36,7 @@
       "name": "Cupom Livre",
       "url": "https://cupomlivre.net/",
       "inLanguage": "pt-BR",
-      "description": "Site oficial do Cupom Livre, extensão Chrome para cupons do Mercado Livre."
+      "description": "Site oficial do Cupom Livre, extensão de cupom do Mercado Livre para Chrome."
     },
     {
       "@type": "SoftwareApplication",
@@ -43,7 +45,7 @@
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Chrome, Windows, macOS, Linux, ChromeOS",
       "browserRequirements": "Google Chrome ou navegador compatível com extensões Chrome",
-      "description": "Extensão Chrome para encontrar e coletar cupons disponíveis no Mercado Livre Brasil com controles de privacidade e afiliado transparente.",
+      "description": "Extensão de cupom do Mercado Livre para Chrome que ajuda a encontrar e coletar cupons disponíveis com praticidade, privacidade e afiliado transparente.",
       "url": "https://cupomlivre.net/",
       "downloadUrl": "https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco",
       "installUrl": "https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco",
@@ -79,10 +81,10 @@
         },
         {
           "@type": "Question",
-          "name": "A extensão compra produtos por mim?",
+          "name": "Como o Cupom Livre ajuda a encontrar cupons do Mercado Livre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não. O Cupom Livre não compra produtos, não finaliza pedidos e não atua em páginas de checkout, pagamento ou carrinho."
+            "text": "Depois de instalada no Chrome, a extensão ajuda você a buscar e coletar cupons disponíveis no Mercado Livre com mais praticidade, sem alterar a rotina normal de navegação."
           }
         },
         {
@@ -90,7 +92,7 @@
           "name": "A extensão coleta senha, CPF ou cartão?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não. A extensão não coleta senha, cartão, CPF, dados bancários, cookies, login ou dados de checkout."
+            "text": "Não. A extensão não coleta senhas, dados de cartão, CPF, dados bancários, cookies, credenciais de login ou informações de checkout."
           }
         },
         {
@@ -349,15 +351,30 @@
       }
 
       .check {
-        display: inline-grid;
+        display: inline-flex;
         width: 18px;
         height: 18px;
-        place-items: center;
+        flex: 0 0 18px;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
         background: var(--green-soft);
         color: var(--green);
-        font-size: 12px;
+        line-height: 1;
+        font-size: 0;
         font-weight: 900;
+        position: relative;
+        align-self: center;
+      }
+
+      .check::before {
+        content: "";
+        width: 5px;
+        height: 9px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translate(-1px, -1px);
+        transform-origin: center;
       }
 
 
@@ -800,11 +817,14 @@
         flex-wrap: wrap;
         gap: 9px;
         margin-top: 16px;
+        justify-content: center;
+        align-items: center;
       }
 
       .transparency-list span {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 7px;
         padding: 8px 10px;
         border: 1px solid #d7eadf;
@@ -976,7 +996,7 @@
           </span>
           <span>
             <strong>Cupom Livre</strong>
-            <span>Extensão de cupons para Mercado Livre</span>
+            <span>Extensão de cupom do Mercado Livre</span>
           </span>
         </a>
         <nav aria-label="Navegação principal">
@@ -988,19 +1008,19 @@
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> Extensão para Chrome</div>
-          <h1 id="hero-title">Extensão de cupons para Mercado Livre.</h1>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Extensão de cupom para Chrome</div>
+          <h1 id="hero-title">Extensão de cupom do Mercado Livre para Chrome.</h1>
           <p class="lead">
-            O Cupom Livre ajuda você a encontrar e coletar cupons disponíveis no Mercado Livre pelo Chrome de forma mais prática, rápida e transparente.
+            O Cupom Livre é uma extensão de cupom do Mercado Livre que ajuda você a encontrar e coletar cupons disponíveis no Chrome de forma mais prática, rápida e transparente.
           </p>
           <div class="hero-actions">
             <a class="primary-link" href="https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco" target="_blank" rel="noopener">Instalar extensão</a>
             <a class="secondary-link" href="#como-funciona">Ver como funciona</a>
           </div>
           <div class="hero-note" aria-label="Resumo de confiança">
-            <span><span class="check">✓</span> Sem prometer economia garantida</span>
-            <span><span class="check">✓</span> Afiliado opcional e informado</span>
-            <span><span class="check">✓</span> Política de privacidade pública</span>
+            <span><span class="check" aria-hidden="true"></span> Sem promessas de economia garantida</span>
+            <span><span class="check" aria-hidden="true"></span> Afiliado opcional e informado</span>
+            <span><span class="check" aria-hidden="true"></span> Política de privacidade pública</span>
           </div>
         </div>
         <figure class="hero-visual" aria-label="Prévia visual da extensão Cupom Livre">
@@ -1017,14 +1037,14 @@
       <section id="como-funciona" aria-labelledby="how-title">
         <div class="section-head">
           <div class="section-label">Como funciona</div>
-          <h2 id="how-title">Um fluxo simples para facilitar sua busca por cupons.</h2>
-          <p>Instale a extensão, acesse o Mercado Livre e use o Cupom Livre quando quiser procurar cupons disponíveis.</p>
+          <h2 id="how-title">Como funciona a extensão de cupom do Mercado Livre.</h2>
+          <p>Instale a extensão, acesse o Mercado Livre e use o Cupom Livre sempre que quiser procurar cupons disponíveis com mais praticidade.</p>
         </div>
         <div class="steps">
           <article class="step-card">
             <div class="step-number">1</div>
             <h3>Instale no Chrome</h3>
-            <p>Adicione a extensão pelo Chrome e fixe o ícone para acessar com facilidade.</p>
+            <p>Adicione a extensão ao Chrome e fixe o ícone para acessá-la com facilidade.</p>
           </article>
           <article class="step-card">
             <div class="step-number">2</div>
@@ -1042,39 +1062,39 @@
       <section aria-labelledby="benefits-title">
         <div class="section-head">
           <div class="section-label">Benefícios</div>
-          <h2 id="benefits-title">Feito para ser simples, claro e útil.</h2>
-          <p>O foco é reduzir atrito na busca por cupons, mantendo o controle nas mãos do usuário.</p>
+          <h2 id="benefits-title">A extensão de cupom do Mercado Livre pensada para ser simples, clara e útil.</h2>
+          <p>Se você procura uma extensão de cupom do Mercado Livre, o foco aqui é reduzir atrito na busca por cupons, mantendo o controle nas mãos do usuário.</p>
         </div>
         <div class="benefits">
           <article class="benefit-card">
             <div class="icon-box">⚡</div>
-            <h3>Mais praticidade</h3>
-            <p>Ajuda a centralizar a busca e coleta de cupons disponíveis em poucos cliques.</p>
+            <h3>Busca de cupons mais prática</h3>
+            <p>Ajuda a encontrar e coletar cupons do Mercado Livre em poucos cliques.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon-box">⏱</div>
+            <div class="icon-box">⏱️</div>
             <h3>Menos tempo procurando</h3>
-            <p>Facilita etapas repetitivas para você não perder tempo navegando manualmente.</p>
+            <p>Facilita etapas repetitivas para você não perder tempo procurando cupons manualmente.</p>
           </article>
           <article class="benefit-card">
             <div class="icon-box">🧭</div>
             <h3>Interface simples</h3>
-            <p>Popup direto, visual limpo e ações fáceis de entender.</p>
+            <p>Janela objetiva, visual limpo e ações fáceis de entender no uso diário.</p>
           </article>
           <article class="benefit-card">
-            <div class="icon-box">🎛</div>
+            <div class="icon-box">🎛️</div>
             <h3>Controle do usuário</h3>
-            <p>Você decide quando abrir, buscar cupons e usar os recursos da extensão.</p>
+            <p>Você decide quando abrir, buscar cupons e usar os recursos da extensão no Mercado Livre.</p>
           </article>
           <article class="benefit-card">
             <div class="icon-box">🤝</div>
             <h3>Afiliado transparente</h3>
-            <p>O apoio ao projeto pode ser informado e configurável, sem alterar o preço final.</p>
+            <p>O apoio ao projeto pode ser informado e configurável, sem alterar o preço final do produto.</p>
           </article>
           <article class="benefit-card">
             <div class="icon-box">🔒</div>
             <h3>Sem dados sensíveis</h3>
-            <p>A extensão não coleta senha, cartão, CPF, dados bancários ou dados de checkout.</p>
+            <p>A extensão não coleta senhas, dados de cartão, CPF, dados bancários ou informações de checkout.</p>
           </article>
         </div>
       </section>
@@ -1083,8 +1103,8 @@
         <div class="install-panel">
           <div class="install-copy">
             <div class="section-label">Instalação</div>
-            <h2 id="install-title">Passo a passo para começar.</h2>
-            <p>Envie este site para quem quiser conhecer o Cupom Livre. A pessoa entende o que é, instala e aprende o básico em poucos minutos.</p>
+            <h2 id="install-title">Como instalar a extensão de cupom do Mercado Livre.</h2>
+            <p>Compartilhe esta página com quem procura uma extensão de cupom do Mercado Livre. A pessoa entende a proposta, instala e aprende o básico em poucos minutos.</p>
             <div class="hero-actions">
               <a class="primary-link" href="https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco" target="_blank" rel="noopener">Instalar extensão</a>
             </div>
@@ -1092,11 +1112,11 @@
           <div class="install-list">
             <div class="install-step">
               <div class="step-number">1</div>
-              <div><strong>Abra a página oficial</strong><p>A página do Cupom Livre abre direto na Chrome Web Store para você instalar a extensão.</p></div>
+              <div><strong>Abra a página oficial</strong><p>A página oficial do Cupom Livre será aberta diretamente na Chrome Web Store para que você instale a extensão.</p></div>
             </div>
             <div class="install-step">
               <div class="step-number">2</div>
-              <div><strong>Adicione ao Chrome</strong><p>Confirme a instalação no navegador e aguarde o ícone aparecer.</p></div>
+              <div><strong>Adicione ao Chrome</strong><p>Confirme a instalação no navegador e aguarde até que o ícone apareça.</p></div>
             </div>
             <div class="install-step">
               <div class="step-number">3</div>
@@ -1114,18 +1134,26 @@
         <div class="transparency-panel">
           <div>
             <div class="section-label">Transparência</div>
-            <h2 id="privacy-title">Privacidade clara, sem transformar a home em documento jurídico.</h2>
+            <h2 id="privacy-title">Privacidade clara na sua extensão de cupom do Mercado Livre.</h2>
             <p>
-              O Cupom Livre não coleta senhas, cartões, CPF, dados bancários ou dados de checkout. A extensão pode usar links de afiliado de forma informada e configurável, sem alterar o preço final para o usuário.
+              O Cupom Livre não coleta senhas, dados de cartão, CPF, dados bancários ou informações de checkout. A extensão pode usar links de afiliado de forma informada e configurável, sem alterar o preço final para o usuário.
             </p>
             <div class="transparency-list">
-              <span><span class="check">✓</span> Sem senha</span>
-              <span><span class="check">✓</span> Sem cartão</span>
-              <span><span class="check">✓</span> Sem checkout</span>
-              <span><span class="check">✓</span> Política pública</span>
+              <span><span class="check" aria-hidden="true"></span> Sem senha</span>
+              <span><span class="check" aria-hidden="true"></span> Sem cartão</span>
+              <span><span class="check" aria-hidden="true"></span> Sem checkout</span>
+              <span><span class="check" aria-hidden="true"></span> Política pública</span>
             </div>
           </div>
           <a class="secondary-link" href="/privacidade/">Ver política de privacidade</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="seo-title">
+        <div class="section-head">
+          <div class="section-label">Para quem é</div>
+          <h2 id="seo-title">Para quem procura uma extensão de cupom do Mercado Livre.</h2>
+          <p>O Cupom Livre foi criado para usuários que querem encontrar cupons do Mercado Livre no Chrome com mais praticidade, sem abrir mão de privacidade, transparência e controle.</p>
         </div>
       </section>
 
@@ -1133,23 +1161,27 @@
         <div class="section-head">
           <div class="section-label">FAQ</div>
           <h2 id="faq-title">Dúvidas comuns.</h2>
-          <p>Respostas rápidas para quem está conhecendo a extensão pela primeira vez.</p>
+          <p>Respostas rápidas para quem está conhecendo a extensão e quer entender como encontrar cupons no Mercado Livre.</p>
         </div>
         <div class="faq-grid">
           <article class="faq-item">
             <h3>O Cupom Livre é gratuito?</h3>
-            <p>Sim. A proposta é facilitar a busca e coleta de cupons disponíveis no Mercado Livre.</p>
+            <p>Sim. O Cupom Livre pode ser instalado gratuitamente pela Chrome Web Store.</p>
           </article>
           <article class="faq-item">
-            <h3>Ele compra algo por mim?</h3>
-            <p>Não. A extensão não realiza compras, pagamentos ou ações de checkout.</p>
+            <h3>Como o Cupom Livre ajuda a encontrar cupons do Mercado Livre?</h3>
+            <p>Depois de instalado no Chrome, o Cupom Livre ajuda você a buscar e coletar cupons disponíveis no Mercado Livre com mais praticidade.</p>
           </article>
           <article class="faq-item">
-            <h3>Ele coleta senha ou cartão?</h3>
-            <p>Não. O Cupom Livre não coleta senha, CPF, cartão, dados bancários ou dados de checkout.</p>
+            <h3>A extensão coleta senhas ou dados do cartão?</h3>
+            <p>Não. O Cupom Livre não coleta senhas, dados de cartão, CPF, dados bancários ou informações de checkout.</p>
           </article>
           <article class="faq-item">
-            <h3>O que é o apoio por afiliado?</h3>
+            <h3>O Cupom Livre interfere no checkout?</h3>
+            <p>Não. A extensão não realiza compras, pagamentos nem ações de checkout.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Como funciona o apoio ao projeto por meio de links de afiliado?</h3>
             <p>Alguns links podem incluir identificação de afiliado para apoiar o projeto, sem alterar o preço final para o usuário.</p>
           </article>
           <article class="faq-item">
@@ -1165,8 +1197,8 @@
 
       <section aria-labelledby="final-title">
         <div class="final-cta">
-          <h2 id="final-title">Pronto para facilitar sua busca por cupons?</h2>
-          <p>Instale o Cupom Livre e use quando quiser procurar cupons disponíveis no Mercado Livre com mais praticidade.</p>
+          <h2 id="final-title">Pronto para usar uma extensão de cupom do Mercado Livre?</h2>
+          <p>Instale o Cupom Livre e use quando quiser procurar cupons disponíveis no Mercado Livre com mais praticidade, privacidade e transparência.</p>
           <div class="hero-actions">
             <a class="primary-link" href="https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco" target="_blank" rel="noopener">Instalar extensão</a>
             <a class="secondary-link" href="/privacidade/">Ver privacidade</a>
@@ -1176,7 +1208,7 @@
 
       <footer>
         <div class="footer-row">
-          <div>Cupom Livre. Extensão Chrome para cupons disponíveis no Mercado Livre.</div>
+          <div>Cupom Livre. Extensão de cupom do Mercado Livre para Chrome, criada para ajudar você a encontrar cupons disponíveis com mais praticidade.</div>
           <div class="footer-links">
             <a href="/privacidade/">Privacidade</a>
             <a href="https://chromewebstore.google.com/detail/cupom-livre/efiamjmheejfnojcodpmjiacbbbmdoco" target="_blank" rel="noopener">Chrome Web Store</a>
