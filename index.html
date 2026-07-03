@@ -102,6 +102,14 @@
             "@type": "Answer",
             "text": "Sim. O controle de afiliado fica visível na extensão e pode ser desativado ou reativado pelo usuário."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "A extensão funciona em celulares?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Atualmente, o Cupom Livre foi desenvolvido para o Google Chrome em computadores compatíveis com extensões."
+          }
         }
       ]
     }
@@ -360,21 +368,12 @@
         border-radius: 50%;
         background: var(--green-soft);
         color: var(--green);
+        font-size: 12px;
         line-height: 1;
-        font-size: 0;
         font-weight: 900;
-        position: relative;
-        align-self: center;
-      }
-
-      .check::before {
-        content: "";
-        width: 5px;
-        height: 9px;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transform: rotate(45deg) translate(-1px, -1px);
-        transform-origin: center;
+        font-family: "Segoe UI Symbol", "Arial Unicode MS", Arial, sans-serif;
+        text-align: center;
+        vertical-align: middle;
       }
 
 
@@ -817,8 +816,9 @@
         flex-wrap: wrap;
         gap: 9px;
         margin-top: 16px;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        width: 100%;
       }
 
       .transparency-list span {
@@ -1018,9 +1018,9 @@
             <a class="secondary-link" href="#como-funciona">Ver como funciona</a>
           </div>
           <div class="hero-note" aria-label="Resumo de confiança">
-            <span><span class="check" aria-hidden="true"></span> Sem promessas de economia garantida</span>
-            <span><span class="check" aria-hidden="true"></span> Afiliado opcional e informado</span>
-            <span><span class="check" aria-hidden="true"></span> Política de privacidade pública</span>
+            <span><span class="check" aria-hidden="true">✔</span> Sem promessas de economia garantida</span>
+            <span><span class="check" aria-hidden="true">✔</span> Afiliado opcional e informado</span>
+            <span><span class="check" aria-hidden="true">✔</span> Política de privacidade pública</span>
           </div>
         </div>
         <figure class="hero-visual" aria-label="Prévia visual da extensão Cupom Livre">
@@ -1139,10 +1139,10 @@
               O Cupom Livre não coleta senhas, dados de cartão, CPF, dados bancários ou informações de checkout. A extensão pode usar links de afiliado de forma informada e configurável, sem alterar o preço final para o usuário.
             </p>
             <div class="transparency-list">
-              <span><span class="check" aria-hidden="true"></span> Sem senha</span>
-              <span><span class="check" aria-hidden="true"></span> Sem cartão</span>
-              <span><span class="check" aria-hidden="true"></span> Sem checkout</span>
-              <span><span class="check" aria-hidden="true"></span> Política pública</span>
+              <span><span class="check" aria-hidden="true">✔</span> Sem senha</span>
+              <span><span class="check" aria-hidden="true">✔</span> Sem cartão</span>
+              <span><span class="check" aria-hidden="true">✔</span> Sem checkout</span>
+              <span><span class="check" aria-hidden="true">✔</span> Política pública</span>
             </div>
           </div>
           <a class="secondary-link" href="/privacidade/">Ver política de privacidade</a>
@@ -1191,6 +1191,10 @@
           <article class="faq-item">
             <h3>Onde vejo a política de privacidade?</h3>
             <p>A política fica disponível em <a href="/privacidade/">cupomlivre.net/privacidade</a>.</p>
+          </article>
+          <article class="faq-item">
+            <h3>A extensão funciona em celulares?</h3>
+            <p>Não. Atualmente, o Cupom Livre foi desenvolvido para o Google Chrome em computadores compatíveis com extensões.</p>
           </article>
         </div>
       </section>
