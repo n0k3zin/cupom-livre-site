@@ -374,28 +374,437 @@
 
       .hero-visual {
         position: relative;
-        display: grid;
+        min-height: 560px;
         margin: 0;
-        padding: 8px;
+        display: grid;
         place-items: center;
+        overflow: visible;
+        isolation: isolate;
+      }
+
+      .hero-visual::before {
+        position: absolute;
+        width: 92%;
+        height: 78%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(24, 105, 231, 0.16) 0%, rgba(24, 105, 231, 0.07) 42%, transparent 72%);
+        filter: blur(10px);
+        content: "";
+        z-index: -3;
+      }
+
+      .hero-market-window {
+        position: absolute;
+        width: 48%;
+        min-height: 250px;
         overflow: hidden;
-        border: 1px solid rgba(223, 231, 243, 0.92);
-        border-radius: 30px;
-        background: rgba(255, 255, 255, 0.82);
-        box-shadow: var(--shadow);
+        border: 1px solid rgba(210, 222, 240, 0.62);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.54);
+        box-shadow: 0 18px 48px rgba(42, 78, 140, 0.08);
+        opacity: 0.72;
+        filter: blur(1.35px);
+        backdrop-filter: blur(12px);
+        z-index: -1;
       }
 
-      .hero-shot {
-        position: relative;
-        width: 100%;
-        z-index: 1;
+      .hero-market-window--ml {
+        left: -5%;
+        top: 16%;
+        transform: rotate(-3deg);
       }
 
-      .hero-visual img {
+      .hero-market-window--shopee {
+        right: -7%;
+        top: 12%;
+        transform: rotate(3.5deg);
+      }
+
+      .hero-market-window--ali {
+        right: -9%;
+        bottom: 7%;
+        width: 44%;
+        transform: rotate(2deg);
+      }
+
+      .hero-market-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        height: 32px;
+        padding: 0 12px;
+        border-bottom: 1px solid rgba(222, 230, 242, 0.7);
+        background: rgba(248, 251, 255, 0.8);
+      }
+
+      .hero-market-bar i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #cbd6e5;
+      }
+
+      .hero-market-body {
+        padding: 18px;
+      }
+
+      .hero-market-brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 120px;
+        height: 42px;
+        padding: 0 16px;
+        border-radius: 12px;
+        font-size: 17px;
+        font-weight: 900;
+      }
+
+      .hero-market-brand--ml {
+        background: #fff2a8;
+        color: #173b73;
+      }
+
+      .hero-market-brand--shopee {
+        background: #ffebe4;
+        color: #d84b2f;
+      }
+
+      .hero-market-brand--ali {
+        background: #fff0f1;
+        color: #c52b36;
+      }
+
+      .hero-market-search {
+        height: 30px;
+        margin-top: 14px;
+        border-radius: 10px;
+        background: rgba(229, 236, 247, 0.86);
+      }
+
+      .hero-market-products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .hero-market-products span {
         display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 23px;
+        height: 82px;
+        border-radius: 12px;
+        background:
+          linear-gradient(145deg, rgba(231, 238, 248, 0.95), rgba(248, 251, 255, 0.95));
+      }
+
+      .hero-extension-ui {
+        position: relative;
+        width: min(390px, 84%);
+        padding: 14px;
+        border: 1px solid rgba(211, 224, 243, 0.95);
+        border-radius: 27px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow:
+          0 34px 70px rgba(36, 73, 135, 0.18),
+          0 8px 26px rgba(24, 105, 231, 0.08);
+        backdrop-filter: blur(18px);
+        z-index: 2;
+      }
+
+      .hero-extension-head {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 2px 2px 12px;
+      }
+
+      .hero-extension-logo {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(145deg, #2477f0, #0f58c8);
+        color: #fff;
+        box-shadow: 0 8px 18px rgba(24, 105, 231, 0.2);
+      }
+
+      .hero-extension-logo svg {
+        width: 31px;
+        height: 31px;
+      }
+
+      .hero-extension-title strong {
+        display: block;
+        color: var(--ink);
+        font-size: 18px;
+        line-height: 1.1;
+      }
+
+      .hero-extension-title span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .hero-extension-close {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        margin-left: auto;
+        place-items: center;
+        border-radius: 50%;
+        background: #f1f5fb;
+        color: #22304b;
+        font-size: 19px;
+      }
+
+      .hero-extension-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 5px;
+        border: 1px solid #dde7f4;
+        border-radius: 14px;
+        background: #fbfdff;
+      }
+
+      .hero-extension-tab {
+        display: grid;
+        min-height: 40px;
+        place-items: center;
+        border-radius: 10px;
+        color: #243149;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .hero-extension-tab--active {
+        background: var(--blue);
+        color: #fff;
+        box-shadow: 0 8px 16px rgba(24, 105, 231, 0.16);
+      }
+
+      .hero-extension-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        padding: 10px 12px;
+        border: 1px solid #cfe8d9;
+        border-radius: 13px;
+        background: #eef9f2;
+        color: #237148;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .hero-extension-status b {
+        color: #177245;
+      }
+
+      .hero-extension-collect {
+        margin-top: 10px;
+        padding: 15px 16px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #0d67f3, #0b5edc);
+        color: #fff;
+        box-shadow: 0 12px 22px rgba(24, 105, 231, 0.18);
+      }
+
+      .hero-extension-collect strong {
+        display: block;
+        font-size: 16px;
+      }
+
+      .hero-extension-collect span {
+        display: block;
+        margin-top: 2px;
+        font-size: 11px;
+        opacity: 0.86;
+      }
+
+      .hero-extension-platforms {
+        margin-top: 12px;
+        padding: 12px;
+        border: 1px solid #e1e9f5;
+        border-radius: 16px;
+        background: #fcfdff;
+      }
+
+      .hero-extension-section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .hero-extension-section-title span {
+        color: var(--blue);
+        font-size: 10px;
+        font-weight: 800;
+      }
+
+      .hero-platform-row {
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        gap: 9px;
+        align-items: center;
+        padding: 8px 0;
+        border-top: 1px solid #edf2f8;
+      }
+
+      .hero-platform-row:first-of-type {
+        border-top: 0;
+      }
+
+      .hero-platform-icon {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .hero-platform-icon--ml { background: #ffd62e; color: #1d3c70; }
+      .hero-platform-icon--shopee { background: #f45b35; }
+      .hero-platform-icon--ali { background: #ef3f4c; }
+
+      .hero-platform-copy strong {
+        display: block;
+        color: var(--ink);
+        font-size: 12px;
+        line-height: 1.2;
+      }
+
+      .hero-platform-copy span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 9px;
+      }
+
+      .hero-platform-badge {
+        margin-left: 5px;
+        padding: 2px 5px;
+        border-radius: 999px;
+        background: #e8f7ee;
+        color: #177245;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 900;
+      }
+
+      .hero-platform-toggle {
+        position: relative;
+        width: 42px;
+        height: 24px;
+        border-radius: 999px;
+        background: var(--blue);
+        box-shadow: inset 0 0 0 1px rgba(15, 88, 200, 0.12);
+      }
+
+      .hero-platform-toggle::after {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(15, 39, 79, 0.2);
+        content: "";
+      }
+
+      .hero-extension-summary {
+        margin-top: 10px;
+        padding: 11px 12px;
+        border: 1px solid #e1e9f5;
+        border-radius: 15px;
+        background: #fbfdff;
+      }
+
+      .hero-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .hero-summary-grid div {
+        padding: 7px 4px;
+        border: 1px solid #e2e9f4;
+        border-radius: 9px;
+        background: #fff;
+        text-align: center;
+      }
+
+      .hero-summary-grid span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+      }
+
+      .hero-summary-grid strong {
+        display: block;
+        margin-top: 2px;
+        color: var(--ink);
+        font-size: 12px;
+      }
+
+      .hero-summary-grid div:first-child strong {
+        color: var(--blue);
+      }
+
+      .hero-extension-foot {
+        margin-top: 8px;
+        color: #68758a;
+        font-size: 9px;
+        text-align: center;
+      }
+
+      @media (max-width: 920px) {
+        .hero-visual {
+          min-height: 520px;
+          margin-top: 12px;
+        }
+
+        .hero-extension-ui {
+          width: min(410px, 82%);
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero-visual {
+          min-height: 470px;
+          overflow: hidden;
+        }
+
+        .hero-extension-ui {
+          width: min(360px, 90%);
+          padding: 12px;
+        }
+
+        .hero-market-window--ml {
+          left: -18%;
+        }
+
+        .hero-market-window--shopee {
+          right: -20%;
+        }
+
+        .hero-market-window--ali {
+          right: -22%;
+        }
       }
 
       .mock-browser {
@@ -1194,9 +1603,107 @@
             <span><span class="check" aria-hidden="true">✔</span> Recorrência por plataforma</span>
           </div>
         </div>
-        <figure class="hero-visual" aria-label="Cupom Livre com Mercado Livre, Shopee e AliExpress">
-          <div class="hero-shot">
-            <img src="/assets/hero-extension-preview.svg" alt="Cupom Livre mostrando Mercado Livre, Shopee e AliExpress com controles de coleta automática e recorrência." width="1600" height="900" loading="eager" decoding="async">
+        <figure class="hero-visual" aria-label="Interface do Cupom Livre com Mercado Livre, Shopee e AliExpress">
+          <div class="hero-market-window hero-market-window--ml" aria-hidden="true">
+            <div class="hero-market-bar"><i></i><i></i><i></i></div>
+            <div class="hero-market-body">
+              <div class="hero-market-brand hero-market-brand--ml">Mercado Livre</div>
+              <div class="hero-market-search"></div>
+              <div class="hero-market-products"><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="hero-market-window hero-market-window--shopee" aria-hidden="true">
+            <div class="hero-market-bar"><i></i><i></i><i></i></div>
+            <div class="hero-market-body">
+              <div class="hero-market-brand hero-market-brand--shopee">Shopee</div>
+              <div class="hero-market-search"></div>
+              <div class="hero-market-products"><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="hero-market-window hero-market-window--ali" aria-hidden="true">
+            <div class="hero-market-bar"><i></i><i></i><i></i></div>
+            <div class="hero-market-body">
+              <div class="hero-market-brand hero-market-brand--ali">AliExpress</div>
+              <div class="hero-market-search"></div>
+              <div class="hero-market-products"><span></span><span></span></div>
+            </div>
+          </div>
+
+          <div class="hero-extension-ui" role="img" aria-label="Cupom Livre com coleta automática ativa para Mercado Livre, Shopee e AliExpress">
+            <div class="hero-extension-head">
+              <div class="hero-extension-logo" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M10 20.5C10 17.46 12.46 15 15.5 15H32.5C35.54 15 38 17.46 38 20.5V27.5C38 30.54 35.54 33 32.5 33H15.5C12.46 33 10 30.54 10 27.5V20.5Z" fill="white"/>
+                  <circle cx="10" cy="24" r="3" fill="#1869E7"/><circle cx="38" cy="24" r="3" fill="#1869E7"/>
+                  <path d="M20 29L28.5 19" stroke="#1869E7" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="19" cy="20" r="2" fill="#1869E7"/><circle cx="29" cy="28" r="2" fill="#1869E7"/>
+                </svg>
+              </div>
+              <div class="hero-extension-title">
+                <strong>Cupom Livre</strong>
+                <span>Cupons coletados automaticamente para sua próxima compra.</span>
+              </div>
+              <div class="hero-extension-close" aria-hidden="true">×</div>
+            </div>
+
+            <div class="hero-extension-tabs" aria-hidden="true">
+              <div class="hero-extension-tab hero-extension-tab--active">⌂&nbsp; Início</div>
+              <div class="hero-extension-tab">⚙&nbsp; Configurações</div>
+            </div>
+
+            <div class="hero-extension-status">
+              <span aria-hidden="true">✓</span>
+              <b>Extensão ativa</b>
+              <span>Pronta para coletar cupons</span>
+            </div>
+
+            <div class="hero-extension-collect">
+              <strong>Coletar cupons agora</strong>
+              <span>Escolha a plataforma para coletar</span>
+            </div>
+
+            <div class="hero-extension-platforms">
+              <div class="hero-extension-section-title">Plataformas monitoradas <span>Expandir recorrências⌄</span></div>
+
+              <div class="hero-platform-row">
+                <div class="hero-platform-icon hero-platform-icon--ml">ML</div>
+                <div class="hero-platform-copy">
+                  <strong>Mercado Livre <em class="hero-platform-badge">Ativo</em></strong>
+                  <span>Coleta automática ativa</span>
+                </div>
+                <div class="hero-platform-toggle" aria-hidden="true"></div>
+              </div>
+
+              <div class="hero-platform-row">
+                <div class="hero-platform-icon hero-platform-icon--shopee">S</div>
+                <div class="hero-platform-copy">
+                  <strong>Shopee <em class="hero-platform-badge">Ativo</em></strong>
+                  <span>Coleta automática ativa</span>
+                </div>
+                <div class="hero-platform-toggle" aria-hidden="true"></div>
+              </div>
+
+              <div class="hero-platform-row">
+                <div class="hero-platform-icon hero-platform-icon--ali">AE</div>
+                <div class="hero-platform-copy">
+                  <strong>AliExpress <em class="hero-platform-badge">Ativo</em></strong>
+                  <span>Coleta automática ativa</span>
+                </div>
+                <div class="hero-platform-toggle" aria-hidden="true"></div>
+              </div>
+            </div>
+
+            <div class="hero-extension-summary">
+              <div class="hero-extension-section-title">Resumo de cupons coletados <span>Todas as plataformas⌄</span></div>
+              <div class="hero-summary-grid" aria-hidden="true">
+                <div><span>Hoje</span><strong>1.437</strong></div>
+                <div><span>Semana</span><strong>3.139</strong></div>
+                <div><span>Mês</span><strong>3.139</strong></div>
+                <div><span>Total</span><strong>3.175</strong></div>
+              </div>
+            </div>
+
+            <div class="hero-extension-foot">◷ &nbsp; Última coleta hoje, 21:19</div>
           </div>
         </figure>
       </section>
